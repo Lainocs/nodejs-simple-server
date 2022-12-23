@@ -6,11 +6,11 @@ const app = express()
 app.use(bodyParser.json())
 dotenv.config()
 
-let data = []
+let data = ''
 
 app.post('/', (req, res) => {
-	data.push(req.body)
-	res.send('OK')
+	data = req.body.data
+	res.send(data)
 })
 
 app.get('/', (req, res) => {
