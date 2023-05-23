@@ -14,7 +14,7 @@ app.post('/', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-	res.send(data)
+	res.send("Bravo ! tu as gagné du jambon !")
 })
 
 app.listen(process.env.PORT, () => {
