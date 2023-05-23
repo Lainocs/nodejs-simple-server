@@ -19,4 +19,5 @@ jobs:
           script: |
             cd /var/www/node-server
             git pull origin main
+            yarn
             pm2 restart hello.papacastor.fr
