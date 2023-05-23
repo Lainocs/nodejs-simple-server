@@ -6,11 +6,10 @@ on:
       - main
 
 jobs:
-  build:
-    name: "Deploy to production"
+  cd:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: "Deploy to prod"
         uses: appleboy/ssh-action@master
         with:
           username: ${{ secrets.SSH_USERNAME }}
@@ -19,6 +18,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /var/www/node-server
-            sudo git pull
-            yarn
+            git pull origin main
             pm2 restart hello.papacastor.fr
